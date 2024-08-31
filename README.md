@@ -42,6 +42,3 @@ Database Support:
 PyQt offers integrated support for working with databases using the Qt SQL module. It supports a variety of database systems like SQLite, MySQL, and PostgreSQL, making it easy to build database-driven applications.
 Licensing
 GPL or Commercial License: PyQt is available under the GPL (General Public License) and a commercial license. If you plan to develop a proprietary application that you do not want to open-source, you may need to purchase a commercial license.
-
-Plan for Tomorrow:
-Learn pyQT tutorial. Design the UI wire frame. write an example application

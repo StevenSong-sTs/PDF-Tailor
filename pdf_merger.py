@@ -1,5 +1,6 @@
 import PyPDF2
 import os 
+import argparse
 
 def merge_pdfs(paths, output):
     pdf_writer = PyPDF2.PdfWriter()
@@ -57,23 +58,29 @@ def merge_pdfs_from_directory(input_directory, output_directory):
     with open(output_directory, 'wb') as out:
         pdf_writer.write(out)
 
+def main():
+    parser = argparse.ArgumentParser(description="Process command line arguments.")
+    
+    parser.add_argument('--operationType', type=str, choices=['split', 'merge', 'merge_from_directory'], required=True, help="The type of operation: 'split' OR 'merge' OR 'merge_from_directory'")
+    
+    args = parser.parse_args()
+    
+    if args.operationType == "split":
+        input_path = 'source/CanadianImmigrationRecords.pdf'
+        output_path = 'output/CanadianImmigrationRecords.pdf'
+        split_at = [1]
+        split_pdfs(input_path, output_path, split_at)
+    elif args.operationType == 'merge':
+        #pdf_files = ['source/AccountDescription.pdf', 'source/January 18, 2024.pdf', 'source/December 18, 2023.pdf', 'source/November 17, 2023.pdf', 'source/October 18, 2023.pdf', 'source/September 18, 2023.pdf', 'source/August 18, 2023.pdf']
+        #pdf_files = ['source/AccountDescription.pdf', 'source/January 9, 2024.pdf', 'source/December 8, 2023.pdf', 'source/November 9, 2023.pdf']
+        pdf_files = ['source/RentalAgreement.pdf', 'source/rental addendum-2024-2025.pdf']
+        output_path = 'output/RentalAgreement2024-2025.pdf'
+        merge_pdfs(pdf_files, output_path)
+    else:
+        input_directory = 'source/paystubs'
+        output_directory = 'output/paystubs.pdf'
+        merge_pdfs_from_directory(input_directory, output_directory)
 
-# input_path = 'source/CanadianImmigrationRecords.pdf'
-# output_path = 'output/CanadianImmigrationRecords.pdf'
-# split_at = [1]
+if __name__ == "__main__":
+    main()
 
-# split_pdfs(input_path, output_path, split_at)
-
-#pdf_files = ['source/AccountDescription.pdf', 'source/January 18, 2024.pdf', 'source/December 18, 2023.pdf', 'source/November 17, 2023.pdf', 'source/October 18, 2023.pdf', 'source/September 18, 2023.pdf', 'source/August 18, 2023.pdf']
-#pdf_files = ['source/AccountDescription.pdf', 'source/January 9, 2024.pdf', 'source/December 8, 2023.pdf', 'source/November 9, 2023.pdf']
-pdf_files = ['source/RentalAgreement.pdf', 'source/rental addendum-2024-2025.pdf']
-
-output_path = 'output/RentalAgreement2024-2025.pdf'
-
-merge_pdfs(pdf_files, output_path)
-
-
-# input_directory = 'source/paystubs'
-# output_directory = 'output/paystubs.pdf'
-
-# merge_pdfs_from_directory(input_directory, output_directory)

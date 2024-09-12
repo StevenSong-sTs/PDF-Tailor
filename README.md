@@ -1,6 +1,11 @@
 # PDF-Tailor
 Your local tailor for merging or combining any pdfs. No more worry about the sketchy third party website steal you files
 
+## TODO:
+
+ - Build a application to load a PDF file with a button. The app should has the ability to select multiple page of a loaded pdf.
+ - Expand the app with more rows and add the output section.
+
 ## Project Scope
  - A Native: research into how to be cross platform as much as possible
  - Investigate build UI with Python

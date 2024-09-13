@@ -52,7 +52,7 @@ class PDFTailorApp(QWidget):
         # Area to display the pages
         self.page_scroll = QScrollArea()
         self.page_widget = QWidget()
-        self.page_layout = QVBoxLayout(self.page_widget)
+        self.page_layout = QHBoxLayout(self.page_widget)
         self.page_scroll.setWidget(self.page_widget)
         self.page_scroll.setWidgetResizable(True)
         self.layout.addWidget(self.page_scroll)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>928</width>
-    <height>844</height>
+    <width>922</width>
+    <height>831</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,44 +42,26 @@
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <widget class="QScrollArea" name="inputScrollArea">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>220</height>
-          </size>
-         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
-         <widget class="QWidget" name="widget">
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
-            <height>422</height>
+            <width>884</width>
+            <height>379</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QListView" name="inputList">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="addFileButton">
-             <property name="text">
-              <string>Add File</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
          </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addFileButton">
+         <property name="text">
+          <string>Add File</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -129,7 +111,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
+            <width>884</width>
             <height>198</height>
            </rect>
           </property>
@@ -153,7 +135,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>928</width>
+     <width>922</width>
      <height>33</height>
     </rect>
    </property>

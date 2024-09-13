@@ -16,15 +16,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QListView, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QScrollArea,
-    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenu,
+    QMenuBar, QPushButton, QScrollArea, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1424, 1027)
+        MainWindow.resize(922, 831)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -56,24 +56,17 @@ class Ui_MainWindow(object):
         self.inputScrollArea = QScrollArea(self.inputContainer)
         self.inputScrollArea.setObjectName(u"inputScrollArea")
         self.inputScrollArea.setWidgetResizable(True)
-        self.widget = QWidget()
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(0, 0, 1386, 605))
-        self.verticalLayout_2 = QVBoxLayout(self.widget)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.inputList = QListView(self.widget)
-        self.inputList.setObjectName(u"inputList")
-
-        self.verticalLayout_2.addWidget(self.inputList)
-
-        self.addFileButton = QPushButton(self.widget)
-        self.addFileButton.setObjectName(u"addFileButton")
-
-        self.verticalLayout_2.addWidget(self.addFileButton)
-
-        self.inputScrollArea.setWidget(self.widget)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 884, 379))
+        self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_4.addWidget(self.inputScrollArea)
+
+        self.addFileButton = QPushButton(self.inputContainer)
+        self.addFileButton.setObjectName(u"addFileButton")
+
+        self.verticalLayout_4.addWidget(self.addFileButton)
 
 
         self.verticalLayout.addWidget(self.inputContainer)
@@ -101,7 +94,7 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1386, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 884, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
@@ -117,7 +110,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1424, 33))
+        self.menubar.setGeometry(QRect(0, 0, 922, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)

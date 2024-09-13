@@ -26,15 +26,23 @@ class PDFArea(QWidget, Ui_PDFArea):
     def load(self):
         for page_num in range(len(self.pdf_document)):
             page = self.pdf_document.load_page(page_num)
-            pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 5.0))  # Scale for higher resolution
-            img = Image.open(io.BytesIO(pix.tobytes("png")))
 
-            # Convert to QPixmap to display in QLabel
-            qimage = QPixmap.fromImage(ImageQt(img))
-            page_label = ClickableLabel()
-            page_label.setPixmap(qimage.scaled(300, 400, Qt.KeepAspectRatio))
-            page_label.page_num = page_num  # Store page number
-            self.page_labels.append(page_label)
+            # Scale the PDF page once at a suitable resolution (e.g., 3.0)
+            pix = page.get_pixmap(matrix=fitz.Matrix(3.0, 3.0))
 
-            # Add page label to the hbox
-            self.horizontalScrollContent.addWidget(page_label)
+            # Check if the pixmap is in RGBA or RGB format and set QImage format accordingly
+            if pix.alpha:  # If pixmap has an alpha channel (RGBA)
+                qimage = QImage(pix.samples, pix.width, pix.height, pix.stride, QImage.Format_RGBA8888)
+            else:  # For RGB format
+                qimage = QImage(pix.samples, pix.width, pix.height, pix.stride, QImage.Format_RGB888)
+
+            # Check if QImage is valid before converting it to QPixmap
+            if not qimage.isNull():
+                page_label = ClickableLabel()
+                page_label.setPixmap(QPixmap.fromImage(qimage).scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                page_label.page_num = page_num
+                self.page_labels.append(page_label)
+                self.horizontalScrollContent.addWidget(page_label)
+            else:
+                print(f"Failed to convert pixmap to QImage for page {page_num}")
+

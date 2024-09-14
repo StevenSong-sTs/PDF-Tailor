@@ -39,7 +39,7 @@ class PDFArea(QWidget, Ui_PDFArea):
             # Check if QImage is valid before converting it to QPixmap
             if not qimage.isNull():
                 page_label = ClickableLabel()
-                page_label.setPixmap(QPixmap.fromImage(qimage).scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                page_label.setPixmap(QPixmap.fromImage(qimage).scaled(200, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation))
                 page_label.page_num = page_num
                 self.page_labels.append(page_label)
                 self.horizontalScrollContent.addWidget(page_label)

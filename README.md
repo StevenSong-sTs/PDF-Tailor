@@ -2,9 +2,12 @@
 Your local tailor for merging or combining any pdfs. No more worry about the sketchy third party website steal you files
 
 ## TODO:
+- [ ] Fix the size of the ClickableLabel 
+- [ ] Fix the size the PDF Area
+- [ ] Fix theme color of the UI to use bright all the time (instead of using system color)
+- [ ] Fix the selected color of the ClickableLabel
+- [ ] Implement Output List and Test add multiple pages to the list 
 
- - Build a application to load a PDF file with a button. The app should has the ability to select multiple page of a loaded pdf.
- - Expand the app with more rows and add the output section.
 
 ## Project Scope
  - A Native: research into how to be cross platform as much as possible

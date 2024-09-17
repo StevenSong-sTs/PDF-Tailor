@@ -20,8 +20,10 @@ class PDFArea(QWidget, Ui_PDFArea):
         # setup horizontal scrolling
         self.horizontalScrollWidget = QWidget()
         self.horizontalScrollContent = QHBoxLayout(self.horizontalScrollWidget)
+        self.horizontalScrollContent.setAlignment(Qt.AlignLeft)
         self.scrollArea.setWidget(self.horizontalScrollWidget)
         self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setFixedHeight(240)
 
     def load(self):
         for page_num in range(len(self.pdf_document)):
@@ -39,7 +41,7 @@ class PDFArea(QWidget, Ui_PDFArea):
             # Check if QImage is valid before converting it to QPixmap
             if not qimage.isNull():
                 page_label = ClickableLabel()
-                page_label.setPixmap(QPixmap.fromImage(qimage).scaled(200, 300, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                page_label.setPixmap(QPixmap.fromImage(qimage).scaled(150, 200, Qt.KeepAspectRatio, Qt.SmoothTransformation))
                 page_label.page_num = page_num
                 self.page_labels.append(page_label)
                 self.horizontalScrollContent.addWidget(page_label)

@@ -8,6 +8,7 @@ class ClickableLabel(QLabel):
         super().__init__(parent)
         self.setFrameStyle(QFrame.StyledPanel | QFrame.Plain)
         self.setLineWidth(2)
+        self.setFixedSize(150,200)
         self.selected = False
         self.unselect()
 

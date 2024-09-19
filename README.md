@@ -6,7 +6,8 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Fix the size the PDF Area
 - [ ] Fix theme color of the UI to use bright all the time (instead of using system color)
 - [ ] Fix the selected color of the ClickableLabel
-- [ ] Implement Output List and Test add multiple pages to the list 
+- [x] Implement Output List and Test add multiple pages to the list 
+- [ ] Fix adding will remove from Input problem
 
 
 ## Project Scope

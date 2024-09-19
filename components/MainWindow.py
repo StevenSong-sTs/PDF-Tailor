@@ -21,6 +21,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.inputScrollArea.setWidget(self.inputScrollWidget)
         self.inputScrollArea.setWidgetResizable(True)
 
+        # Setup output scroll area (where selected ClickableLabel will be moved)
+        self.outputScrollWidget = QWidget()
+        self.outputScrollContent = QHBoxLayout(self.outputScrollWidget)
+        self.outputScrollContent.setAlignment(Qt.AlignLeft)
+        self.outputScrollArea.setWidget(self.outputScrollWidget)
+        self.outputScrollArea.setWidgetResizable(True)
     
     def add_file(self):
         file_dialog = QFileDialog(self)
@@ -29,7 +35,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if file_path:
             file_name = os.path.basename(file_path)
             pdf_document = fitz.open(file_path)
-            pdf_area = PDFArea(pdf_document, file_name)
+            pdf_area = PDFArea(pdf_document, file_name, self.outputScrollContent)
             pdf_area.load()
             self.inputScrollContent.addWidget(pdf_area)
             self.statusBar().showMessage(f"{file_path} has been loaded.", 3000)

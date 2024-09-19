@@ -8,11 +8,12 @@ from components.ClickableLabel import ClickableLabel
 from PySide6.QtGui import QPixmap, QImage
 
 class PDFArea(QWidget, Ui_PDFArea):
-    def __init__(self, document, file_name):
+    def __init__(self, document, file_name, outputContent):
         super().__init__()
         self.setupUi(self)
         self.pdf_document = document
         self.file_name = file_name
+        self.outputContent = outputContent
         self.page_labels = []
 
         # setup horizontal scrolling
@@ -25,6 +26,9 @@ class PDFArea(QWidget, Ui_PDFArea):
 
         # Display the file name
         self.filenameLabel.setText(file_name) 
+
+        # Add button to add the selected label to the output section
+        self.addButton.clicked.connect(self.add_selected_to_output)
 
     def load(self):
         for page_num in range(len(self.pdf_document)):
@@ -49,3 +53,16 @@ class PDFArea(QWidget, Ui_PDFArea):
             else:
                 print(f"Failed to convert pixmap to QImage for page {page_num}")
 
+    def get_selected_labels(self):
+        selected_labels = []
+        for label in self.page_labels:
+            if label.selected:
+                selected_labels.append(label)
+
+        return selected_labels
+    
+    def add_selected_to_output(self):
+        selected_labels = self.get_selected_labels()
+        if len(selected_labels) > 0:
+            for label in selected_labels:
+                self.outputContent.addWidget(label)

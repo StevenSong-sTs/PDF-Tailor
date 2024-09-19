@@ -5,16 +5,14 @@ from PySide6.QtWidgets import (
 from ui_python_files.ui_PDFArea import Ui_PDFArea
 import fitz
 from components.ClickableLabel import ClickableLabel
-from PIL import Image
-from PIL.ImageQt import ImageQt
-import io
 from PySide6.QtGui import QPixmap, QImage
 
 class PDFArea(QWidget, Ui_PDFArea):
-    def __init__(self, document):
+    def __init__(self, document, file_name):
         super().__init__()
         self.setupUi(self)
         self.pdf_document = document
+        self.file_name = file_name
         self.page_labels = []
 
         # setup horizontal scrolling
@@ -24,6 +22,9 @@ class PDFArea(QWidget, Ui_PDFArea):
         self.scrollArea.setWidget(self.horizontalScrollWidget)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setFixedHeight(240)
+
+        # Display the file name
+        self.filenameLabel.setText(file_name) 
 
     def load(self):
         for page_num in range(len(self.pdf_document)):

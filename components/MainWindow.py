@@ -5,6 +5,7 @@ from PySide6.QtWidgets import (
 from ui_python_files.ui_MainWindow import Ui_MainWindow
 from components.PDFArea import PDFArea
 import fitz 
+import os 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -16,6 +17,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # setup input scroll area
         self.inputScrollWidget = QWidget()
         self.inputScrollContent = QVBoxLayout(self.inputScrollWidget)
+        self.inputScrollContent.setAlignment(Qt.AlignTop)
         self.inputScrollArea.setWidget(self.inputScrollWidget)
         self.inputScrollArea.setWidgetResizable(True)
 
@@ -25,8 +27,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         file_path, _ = file_dialog.getOpenFileName(self, "Open PDF", "", "PDF Files (*.pdf)")
 
         if file_path:
+            file_name = os.path.basename(file_path)
             pdf_document = fitz.open(file_path)
-            pdf_area = PDFArea(pdf_document)
+            pdf_area = PDFArea(pdf_document, file_name)
             pdf_area.load()
             self.inputScrollContent.addWidget(pdf_area)
             self.statusBar().showMessage(f"{file_path} has been loaded.", 3000)

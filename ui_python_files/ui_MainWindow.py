@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(922, 831)
+        MainWindow.resize(928, 844)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 884, 379))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 392))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_4.addWidget(self.inputScrollArea)
@@ -94,15 +94,15 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 884, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 890, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
 
-        self.pushButton = QPushButton(self.outputContainer)
-        self.pushButton.setObjectName(u"pushButton")
+        self.exportButton = QPushButton(self.outputContainer)
+        self.exportButton.setObjectName(u"exportButton")
 
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.verticalLayout_3.addWidget(self.exportButton)
 
 
         self.verticalLayout.addWidget(self.outputContainer)
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 922, 33))
+        self.menubar.setGeometry(QRect(0, 0, 928, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)
@@ -137,7 +137,7 @@ class Ui_MainWindow(object):
         self.inputLabel.setText(QCoreApplication.translate("MainWindow", u"Input:", None))
         self.addFileButton.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
         self.outputLabel.setText(QCoreApplication.translate("MainWindow", u"Output:", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Export", None))
+        self.exportButton.setText(QCoreApplication.translate("MainWindow", u"Export", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi
 

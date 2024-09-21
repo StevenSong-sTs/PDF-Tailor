@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
 )
 
-class ClickableLabel(QLabel):
+class PDFPreview(QLabel):
     """ Custom QLabel to make it clickable """
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -11,7 +11,10 @@ class ClickableLabel(QLabel):
         self.setFixedSize(150,200)
         self.selected = False
         self.unselect()
-
+        
+        self.page_num = None  
+        self.pdf_document = None  
+    
     def mousePressEvent(self, event):
         """ Toggle selection on mouse click """
         if self.selected:

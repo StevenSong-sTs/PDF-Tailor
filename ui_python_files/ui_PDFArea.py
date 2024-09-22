@@ -50,10 +50,15 @@ class Ui_PDFArea(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-        self.removeButton = QPushButton(self.widget)
-        self.removeButton.setObjectName(u"removeButton")
+        self.closeButton = QPushButton(self.widget)
+        self.closeButton.setObjectName(u"closeButton")
 
-        self.horizontalLayout.addWidget(self.removeButton)
+        self.horizontalLayout.addWidget(self.closeButton)
+
+        self.selectButton = QPushButton(self.widget)
+        self.selectButton.setObjectName(u"selectButton")
+
+        self.horizontalLayout.addWidget(self.selectButton)
 
         self.addButton = QPushButton(self.widget)
         self.addButton.setObjectName(u"addButton")
@@ -88,7 +93,8 @@ class Ui_PDFArea(object):
     def retranslateUi(self, PDFArea):
         PDFArea.setWindowTitle(QCoreApplication.translate("PDFArea", u"Form", None))
         self.filenameLabel.setText(QCoreApplication.translate("PDFArea", u"TextLabel", None))
-        self.removeButton.setText(QCoreApplication.translate("PDFArea", u"Remove", None))
+        self.closeButton.setText(QCoreApplication.translate("PDFArea", u"Close File", None))
+        self.selectButton.setText(QCoreApplication.translate("PDFArea", u"Select All", None))
         self.addButton.setText(QCoreApplication.translate("PDFArea", u"Add", None))
     # retranslateUi
 

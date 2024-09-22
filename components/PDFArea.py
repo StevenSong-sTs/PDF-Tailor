@@ -26,6 +26,8 @@ class PDFArea(QWidget, Ui_PDFArea):
         self.filenameLabel.setText(file_name) 
 
         self.addButton.clicked.connect(self.add_selected_to_output)
+        self.closeButton.clicked.connect(self.remove_pdf_area)
+        self.selectButton.clicked.connect(self.toggle_select)
 
     def load(self):
         for page_num in range(len(self.pdf_document)):
@@ -76,3 +78,24 @@ class PDFArea(QWidget, Ui_PDFArea):
         if len(selected_labels) > 0:
             for label in selected_labels:
                 self.outputContent.addWidget(label)
+
+    def remove_pdf_area(self):
+        parent_layout = self.parentWidget().layout()
+
+        if parent_layout:
+            parent_layout.removeWidget(self)
+
+        self.setParent(None)
+        self.deleteLater()
+
+    def toggle_select(self):
+        all_selected = all(label.selected for label in self.page_labels)
+
+        if all_selected:
+            for label in self.page_labels:
+                label.unselect()
+            self.selectButton.setText("Select All")
+        else:
+            for label in self.page_labels:
+                label.select()
+            self.selectButton.setText("Unselect All")

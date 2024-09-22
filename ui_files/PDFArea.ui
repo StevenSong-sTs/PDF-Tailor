@@ -53,9 +53,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="removeButton">
+       <widget class="QPushButton" name="closeButton">
         <property name="text">
-         <string>Remove</string>
+         <string>Close File</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="selectButton">
+        <property name="text">
+         <string>Select All</string>
         </property>
        </widget>
       </item>

@@ -39,6 +39,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pdf_area = PDFArea(pdf_document, file_name, self.outputScrollContent)
             pdf_area.load()
             self.inputScrollContent.addWidget(pdf_area)
+            
             self.statusBar().showMessage(f"{file_path} has been loaded.", 3000)
 
     def export_to_pdf(self):

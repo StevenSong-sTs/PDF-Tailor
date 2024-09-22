@@ -8,8 +8,8 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Fix adding to the output section will remove the label from Input problem
 - [x] Rename ClickableLabel PdfPreview
 - [x] implement Export button in the output section
-- [ ] implement Close button in the input section
-- [ ] implement Clear Selection button in the input section
+- [x] implement Close button in the input section
+- [x] implement Select/Unselect All Selection button in the input section
 - [ ] Add remove button in the output section
 - [ ] Add more clear notification when the document is exported. 
 - [ ] Open the exported pdf after completion

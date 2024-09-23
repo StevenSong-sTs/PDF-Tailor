@@ -53,14 +53,8 @@ class PDFArea(QWidget, Ui_PDFArea):
         new_label = PDFPage()
         new_label.setText(label.text())  
         new_label.setPixmap(label.pixmap()) 
-        new_label.selected = label.selected
         new_label.page_num = label.page_num
         new_label.pdf_document = label.pdf_document
-
-        if new_label.selected:
-            new_label.select()
-        else:
-            new_label.unselect() 
         
         return new_label
     

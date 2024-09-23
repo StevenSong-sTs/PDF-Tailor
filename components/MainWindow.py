@@ -44,28 +44,35 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.statusBar().showMessage(f"{file_path} has been loaded.", 3000)
 
     def export_to_pdf(self):
-        selected_labels = []
+        output_pages = []
 
         for i in range(self.outputScrollContent.count()):
             widget = self.outputScrollContent.itemAt(i).widget()
-            if isinstance(widget, PDFPage) and widget.selected:
-                selected_labels.append(widget)
+            if isinstance(widget, PDFPage) :
+                output_pages.append(widget)
 
-        if selected_labels:
+        if output_pages:
             file_dialog = QFileDialog(self)
             save_path, _ = file_dialog.getSaveFileName(self, "Save PDF", "", "PDF Files (*.pdf)")
 
             if save_path:
                 output_pdf = fitz.open()
 
-                for label in selected_labels:
-                    if label.page_num is not None and label.pdf_document is not None:
-                        output_pdf.insert_pdf(label.pdf_document, from_page=label.page_num, to_page=label.page_num)
+                for page in output_pages:
+                    if page.page_num is not None and page.pdf_document is not None:
+                        output_pdf.insert_pdf(page.pdf_document, from_page=page.page_num, to_page=page.page_num)
 
                 output_pdf.save(save_path)
                 output_pdf.close()
-
                 self.statusBar().showMessage(f"PDF saved to {save_path}", 3000)
+
+                try:
+                    if os.name == 'nt':  # For Windows
+                        os.startfile(save_path)
+                    elif os.name == 'posix':  # For macOS and Linux
+                        subprocess.call(('open' if sys.platform == 'darwin' else 'xdg-open', save_path))
+                except Exception as e:
+                    print(f"Failed to open PDF file: {e}")
 
     def remove_selected_pages(self):
         selected_labels_index = []

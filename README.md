@@ -11,11 +11,16 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] implement Close button in the input section
 - [x] implement Select/Unselect Selection button in the input section
 - [x] Add remove button in the output section
-- [ ] Improve the output logic to output everything no matter it is selected or not
-- [ ] Add more clear notification when the document is exported. 
-- [ ] Open the exported pdf after completion
+- [x] Improve the output logic to output everything no matter it is selected or not
+- [x] Add more clear notification when the document is exported. 
+- [x] Open the exported pdf after completion
 - [ ] Fix theme color of the UI to use bright all the time (instead of using system color)
 - [ ] Fix the selected color of the PDFPreview
+
+
+## Edge Cases to Handle:
+- [ ] The exporting pdf trying to over write the existing loaded pdf
+
 
 ## Project Scope
  - A Native: research into how to be cross platform as much as possible

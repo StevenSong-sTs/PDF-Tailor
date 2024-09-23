@@ -14,12 +14,23 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Improve the output logic to output everything no matter it is selected or not
 - [x] Add more clear notification when the document is exported. 
 - [x] Open the exported pdf after completion
-- [ ] Fix theme color of the UI to use bright all the time (instead of using system color)
-- [ ] Fix the selected color of the PDFPreview
+- [x] Adjust the border color of the PDFPage according to the system color theme
 
 
 ## Edge Cases to Handle:
 - [ ] The exporting pdf trying to over write the existing loaded pdf
+
+
+## Aesthetics Improvements:
+- [ ] Design a logo 
+- [ ] Redesign the HiFi wire frame to include all the planed aesthetics improvements 
+- [ ] Add logo to the title
+- [ ] Adjust button position for PDFArea
+- [ ] Adjust font family, font size for the whole application
+- [ ] Add icons for buttons
+- [ ] Add hover effect for the PDFPages
+- [ ] Add hover effect for buttons
+- [ ] Adjust the default application size
 
 
 ## Project Scope

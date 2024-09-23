@@ -3,7 +3,7 @@ from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
 )
 from ui_python_files.ui_MainWindow import Ui_MainWindow
-from components.PDFPreview import PDFPreview
+from components.PDFPage import PDFPage
 from components.PDFArea import PDFArea
 import fitz 
 import os 
@@ -48,7 +48,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         for i in range(self.outputScrollContent.count()):
             widget = self.outputScrollContent.itemAt(i).widget()
-            if isinstance(widget, PDFPreview) and widget.selected:
+            if isinstance(widget, PDFPage) and widget.selected:
                 selected_labels.append(widget)
 
         if selected_labels:
@@ -72,7 +72,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         for i in range(self.outputScrollContent.count()):
             widget = self.outputScrollContent.itemAt(i).widget()
-            if isinstance(widget, PDFPreview) and widget.selected:
+            if isinstance(widget, PDFPage) and widget.selected:
                 selected_labels_index.append(i)
 
         for label_index in selected_labels_index:

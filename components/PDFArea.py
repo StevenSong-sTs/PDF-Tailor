@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
 )
 from ui_python_files.ui_PDFArea import Ui_PDFArea
 import fitz
-from components.PDFPreview import PDFPreview
+from components.PDFPage import PDFPage
 from PySide6.QtGui import QPixmap, QImage
 
 class PDFArea(QWidget, Ui_PDFArea):
@@ -40,7 +40,7 @@ class PDFArea(QWidget, Ui_PDFArea):
                 qimage = QImage(pix.samples, pix.width, pix.height, pix.stride, QImage.Format_RGB888)
 
             if not qimage.isNull():
-                page_label = PDFPreview()
+                page_label = PDFPage()
                 page_label.setPixmap(QPixmap.fromImage(qimage).scaled(150, 200, Qt.KeepAspectRatio, Qt.SmoothTransformation))
                 page_label.page_num = page_num
                 page_label.pdf_document = self.pdf_document
@@ -50,7 +50,7 @@ class PDFArea(QWidget, Ui_PDFArea):
                 print(f"Failed to convert pixmap to QImage for page {page_num}")
     
     def copy_label(self, label):
-        new_label = PDFPreview()
+        new_label = PDFPage()
         new_label.setText(label.text())  
         new_label.setPixmap(label.pixmap()) 
         new_label.selected = label.selected

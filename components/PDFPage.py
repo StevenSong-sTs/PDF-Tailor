@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
 )
 
-class PDFPreview(QLabel):
+class PDFPage(QLabel):
     """ Custom QLabel to make it clickable """
     def __init__(self, parent=None):
         super().__init__(parent)

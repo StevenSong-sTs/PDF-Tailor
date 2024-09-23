@@ -10,7 +10,8 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] implement Export button in the output section
 - [x] implement Close button in the input section
 - [x] implement Select/Unselect Selection button in the input section
-- [ ] Add remove button in the output section
+- [x] Add remove button in the output section
+- [ ] Improve the output logic to output everything no matter it is selected or not
 - [ ] Add more clear notification when the document is exported. 
 - [ ] Open the exported pdf after completion
 - [ ] Fix theme color of the UI to use bright all the time (instead of using system color)

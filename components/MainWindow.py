@@ -28,6 +28,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.addFileButton.clicked.connect(self.add_file)
         self.exportButton.clicked.connect(self.export_to_pdf)
+        self.removeSelectedPagesButton.clicked.connect(self.remove_selected_pages)
     
     def add_file(self):
         file_dialog = QFileDialog(self)
@@ -65,3 +66,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 output_pdf.close()
 
                 self.statusBar().showMessage(f"PDF saved to {save_path}", 3000)
+
+    def remove_selected_pages(self):
+        selected_labels_index = []
+
+        for i in range(self.outputScrollContent.count()):
+            widget = self.outputScrollContent.itemAt(i).widget()
+            if isinstance(widget, PDFPreview) and widget.selected:
+                selected_labels_index.append(i)
+
+        for label_index in selected_labels_index:
+            self.outputScrollContent.removeItem(self.outputScrollContent.itemAt(label_index))

@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 392))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 362))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_4.addWidget(self.inputScrollArea)
@@ -99,6 +99,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
 
+        self.removeSelectedPagesButton = QPushButton(self.outputContainer)
+        self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
+
+        self.verticalLayout_3.addWidget(self.removeSelectedPagesButton)
+
         self.exportButton = QPushButton(self.outputContainer)
         self.exportButton.setObjectName(u"exportButton")
 
@@ -137,6 +142,7 @@ class Ui_MainWindow(object):
         self.inputLabel.setText(QCoreApplication.translate("MainWindow", u"Input:", None))
         self.addFileButton.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
         self.outputLabel.setText(QCoreApplication.translate("MainWindow", u"Output:", None))
+        self.removeSelectedPagesButton.setText(QCoreApplication.translate("MainWindow", u"Remove Selected Pages", None))
         self.exportButton.setText(QCoreApplication.translate("MainWindow", u"Export", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi

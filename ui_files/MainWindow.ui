@@ -51,7 +51,7 @@
             <x>0</x>
             <y>0</y>
             <width>890</width>
-            <height>392</height>
+            <height>362</height>
            </rect>
           </property>
          </widget>
@@ -116,6 +116,13 @@
            </rect>
           </property>
          </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="removeSelectedPagesButton">
+         <property name="text">
+          <string>Remove Selected Pages</string>
+         </property>
         </widget>
        </item>
        <item>

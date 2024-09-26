@@ -33,6 +33,9 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [ ] Adjust the default application size
 
 
+## After Completion:
+- [ ] Research how to publish the app to MS store
+
 ## Project Scope
  - A Native: research into how to be cross platform as much as possible
  - Investigate build UI with Python

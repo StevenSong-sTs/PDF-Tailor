@@ -22,7 +22,7 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 
 
 ## Aesthetics Improvements:
-- [ ] Design a logo 
+- [x] Design a logo 
 - [ ] Redesign the HiFi wire frame to include all the planed aesthetics improvements 
 - [ ] Add logo to the title
 - [ ] Adjust button position for PDFArea

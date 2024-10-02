@@ -40,6 +40,7 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(14)
         self.titleLabel.setFont(font)
+        self.titleLabel.setPixmap(QPixmap(u"../assets/text_logo_transparent.png"))
         self.titleLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.titleLabel)
@@ -58,7 +59,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 362))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 126))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_4.addWidget(self.inputScrollArea)
@@ -138,7 +139,7 @@ class Ui_MainWindow(object):
         self.actionAdd.setText(QCoreApplication.translate("MainWindow", u"Add", None))
         self.actionClear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.actionExport.setText(QCoreApplication.translate("MainWindow", u"Export", None))
-        self.titleLabel.setText(QCoreApplication.translate("MainWindow", u"PDF Tailor", None))
+        self.titleLabel.setText("")
         self.inputLabel.setText(QCoreApplication.translate("MainWindow", u"Input:", None))
         self.addFileButton.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
         self.outputLabel.setText(QCoreApplication.translate("MainWindow", u"Output:", None))

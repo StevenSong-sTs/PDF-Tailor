@@ -80,12 +80,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     print(f"Failed to open PDF file: {e}")
 
     def remove_selected_pages(self):
-        selected_labels_index = []
+        selected_labels = []
 
-        for i in range(self.outputScrollContent.count()):
-            widget = self.outputScrollContent.itemAt(i).widget()
+        for i in reversed(range(self.outputScrollContent.count())):
+            widget_item = self.outputScrollContent.itemAt(i)
+            widget = widget_item.widget()
             if isinstance(widget, PDFPage) and widget.selected:
-                selected_labels_index.append(i)
+                selected_labels.append(widget)
 
-        for label_index in selected_labels_index:
-            self.outputScrollContent.removeItem(self.outputScrollContent.itemAt(label_index))
+        for label in selected_labels:
+            self.outputScrollContent.removeWidget(label)
+            label.setParent(None)
+            label.deleteLater()

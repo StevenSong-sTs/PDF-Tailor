@@ -18,7 +18,7 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [ ] Drug the page in the output section to reorder
 
 ## Bug Fix
-- [ ] Remove from page button does not function properly 
+- [x] Remove from page button does not function properly 
 
 ## Edge Cases to Handle:
 - [ ] The exporting pdf trying to over write the existing loaded pdf

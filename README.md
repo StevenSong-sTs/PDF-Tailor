@@ -23,10 +23,10 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 
 ## Aesthetics Improvements:
 - [x] Design a logo 
-- [ ] Adjust the logo color based on the selected system theme
 - [x] Design a Text Logo
+- [x] Add logo to the title
+- [ ] Adjust the logo color based on the selected system theme
 - [ ] Redesign the HiFi wire frame to include all the planed aesthetics improvements 
-- [ ] Add logo to the title
 - [ ] Adjust button position for PDFArea
 - [ ] Adjust font family, font size for the whole application
 - [ ] Add icons for buttons

@@ -2,6 +2,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
 )
+from PySide6.QtGui import QPixmap
 from ui_python_files.ui_MainWindow import Ui_MainWindow
 from components.PDFPage import PDFPage
 from components.PDFArea import PDFArea
@@ -26,6 +27,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.outputScrollArea.setWidgetResizable(True)
         self.outputScrollArea.setFixedHeight(240)
 
+        pixmap = QPixmap("assets/text_logo_transparent.png")
+        scaled_pixmap = pixmap.scaled(160, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        self.titleLabel.setPixmap(scaled_pixmap)
+        
         self.addFileButton.clicked.connect(self.add_file)
         self.exportButton.clicked.connect(self.export_to_pdf)
         self.removeSelectedPagesButton.clicked.connect(self.remove_selected_pages)

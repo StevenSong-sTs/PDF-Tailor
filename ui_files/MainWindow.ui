@@ -25,9 +25,6 @@
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>../assets/text_logo_transparent.png</pixmap>
-      </property>
       <property name="alignment">
        <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
@@ -54,7 +51,7 @@
             <x>0</x>
             <y>0</y>
             <width>890</width>
-            <height>126</height>
+            <height>362</height>
            </rect>
           </property>
          </widget>

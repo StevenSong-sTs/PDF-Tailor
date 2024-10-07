@@ -40,7 +40,6 @@ class Ui_MainWindow(object):
         font = QFont()
         font.setPointSize(14)
         self.titleLabel.setFont(font)
-        self.titleLabel.setPixmap(QPixmap(u"../assets/text_logo_transparent.png"))
         self.titleLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout.addWidget(self.titleLabel)
@@ -59,7 +58,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 126))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 362))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_4.addWidget(self.inputScrollArea)

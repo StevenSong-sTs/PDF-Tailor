@@ -16,15 +16,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QScrollArea, QSizePolicy,
-    QStatusBar, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QScrollArea,
+    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(928, 844)
+        MainWindow.resize(1201, 857)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -46,66 +46,98 @@ class Ui_MainWindow(object):
 
         self.inputLabel = QLabel(self.centralwidget)
         self.inputLabel.setObjectName(u"inputLabel")
+        font1 = QFont()
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.inputLabel.setFont(font1)
 
         self.verticalLayout.addWidget(self.inputLabel)
 
         self.inputContainer = QWidget(self.centralwidget)
         self.inputContainer.setObjectName(u"inputContainer")
-        self.verticalLayout_4 = QVBoxLayout(self.inputContainer)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_2 = QVBoxLayout(self.inputContainer)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.inputScrollArea = QScrollArea(self.inputContainer)
         self.inputScrollArea.setObjectName(u"inputScrollArea")
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 890, 362))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1163, 333))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
-        self.verticalLayout_4.addWidget(self.inputScrollArea)
+        self.verticalLayout_2.addWidget(self.inputScrollArea)
 
-        self.addFileButton = QPushButton(self.inputContainer)
+        self.addFileButtonContainer = QWidget(self.inputContainer)
+        self.addFileButtonContainer.setObjectName(u"addFileButtonContainer")
+        self.horizontalLayout = QHBoxLayout(self.addFileButtonContainer)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.addFileButton = QPushButton(self.addFileButtonContainer)
         self.addFileButton.setObjectName(u"addFileButton")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.addFileButton.sizePolicy().hasHeightForWidth())
+        self.addFileButton.setSizePolicy(sizePolicy)
+        self.addFileButton.setBaseSize(QSize(0, 0))
+        font2 = QFont()
+        font2.setPointSize(10)
+        font2.setBold(True)
+        self.addFileButton.setFont(font2)
+        self.addFileButton.setAutoFillBackground(False)
+        self.addFileButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
-        self.verticalLayout_4.addWidget(self.addFileButton)
+        self.horizontalLayout.addWidget(self.addFileButton)
+
+
+        self.verticalLayout_2.addWidget(self.addFileButtonContainer)
 
 
         self.verticalLayout.addWidget(self.inputContainer)
 
         self.outputLabel = QLabel(self.centralwidget)
         self.outputLabel.setObjectName(u"outputLabel")
+        self.outputLabel.setFont(font1)
 
         self.verticalLayout.addWidget(self.outputLabel)
 
         self.outputContainer = QWidget(self.centralwidget)
         self.outputContainer.setObjectName(u"outputContainer")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.outputContainer.sizePolicy().hasHeightForWidth())
-        self.outputContainer.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.outputContainer.sizePolicy().hasHeightForWidth())
+        self.outputContainer.setSizePolicy(sizePolicy1)
         self.outputContainer.setMinimumSize(QSize(0, 0))
         self.verticalLayout_3 = QVBoxLayout(self.outputContainer)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.outputScrollArea = QScrollArea(self.outputContainer)
         self.outputScrollArea.setObjectName(u"outputScrollArea")
-        sizePolicy.setHeightForWidth(self.outputScrollArea.sizePolicy().hasHeightForWidth())
-        self.outputScrollArea.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.outputScrollArea.sizePolicy().hasHeightForWidth())
+        self.outputScrollArea.setSizePolicy(sizePolicy1)
         self.outputScrollArea.setMinimumSize(QSize(0, 200))
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 890, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1163, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
 
         self.removeSelectedPagesButton = QPushButton(self.outputContainer)
         self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
+        font3 = QFont()
+        font3.setPointSize(10)
+        self.removeSelectedPagesButton.setFont(font3)
 
         self.verticalLayout_3.addWidget(self.removeSelectedPagesButton)
 
         self.exportButton = QPushButton(self.outputContainer)
         self.exportButton.setObjectName(u"exportButton")
+        self.exportButton.setFont(font3)
 
         self.verticalLayout_3.addWidget(self.exportButton)
 
@@ -115,7 +147,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 928, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1201, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)

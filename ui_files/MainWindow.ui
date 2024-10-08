@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>928</width>
-    <height>844</height>
+    <width>1201</width>
+    <height>857</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,6 +32,12 @@
     </item>
     <item>
      <widget class="QLabel" name="inputLabel">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Input:</string>
       </property>
@@ -39,7 +45,7 @@
     </item>
     <item>
      <widget class="QWidget" name="inputContainer" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QScrollArea" name="inputScrollArea">
          <property name="widgetResizable">
@@ -50,18 +56,52 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
-            <height>362</height>
+            <width>1163</width>
+            <height>333</height>
            </rect>
           </property>
          </widget>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="addFileButton">
-         <property name="text">
-          <string>Add File</string>
-         </property>
+        <widget class="QWidget" name="addFileButtonContainer" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="addFileButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    border: 2px solid rgb(18, 18, 18);
+    border-radius: 15px;
+    padding: 5px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Add File</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -69,6 +109,12 @@
     </item>
     <item>
      <widget class="QLabel" name="outputLabel">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Output:</string>
       </property>
@@ -111,7 +157,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>890</width>
+            <width>1163</width>
             <height>198</height>
            </rect>
           </property>
@@ -120,6 +166,11 @@
        </item>
        <item>
         <widget class="QPushButton" name="removeSelectedPagesButton">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Remove Selected Pages</string>
          </property>
@@ -127,6 +178,11 @@
        </item>
        <item>
         <widget class="QPushButton" name="exportButton">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Export</string>
          </property>
@@ -142,7 +198,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>928</width>
+     <width>1201</width>
      <height>33</height>
     </rect>
    </property>

@@ -18,13 +18,14 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QMenu, QMenuBar, QPushButton, QScrollArea,
-    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
+    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1201, 857)
+        MainWindow.resize(1159, 857)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -62,7 +63,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1163, 333))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1121, 341))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
@@ -122,24 +123,47 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1163, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1121, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
 
-        self.removeSelectedPagesButton = QPushButton(self.outputContainer)
+        self.outputButtonContainer = QWidget(self.outputContainer)
+        self.outputButtonContainer.setObjectName(u"outputButtonContainer")
+        self.horizontalLayout_2 = QHBoxLayout(self.outputButtonContainer)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.removeSelectedPagesButton = QPushButton(self.outputButtonContainer)
         self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
-        font3 = QFont()
-        font3.setPointSize(10)
-        self.removeSelectedPagesButton.setFont(font3)
+        sizePolicy.setHeightForWidth(self.removeSelectedPagesButton.sizePolicy().hasHeightForWidth())
+        self.removeSelectedPagesButton.setSizePolicy(sizePolicy)
+        self.removeSelectedPagesButton.setFont(font2)
+        self.removeSelectedPagesButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
-        self.verticalLayout_3.addWidget(self.removeSelectedPagesButton)
+        self.horizontalLayout_2.addWidget(self.removeSelectedPagesButton)
 
-        self.exportButton = QPushButton(self.outputContainer)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.exportButton = QPushButton(self.outputButtonContainer)
         self.exportButton.setObjectName(u"exportButton")
-        self.exportButton.setFont(font3)
+        sizePolicy.setHeightForWidth(self.exportButton.sizePolicy().hasHeightForWidth())
+        self.exportButton.setSizePolicy(sizePolicy)
+        self.exportButton.setFont(font2)
+        self.exportButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
-        self.verticalLayout_3.addWidget(self.exportButton)
+        self.horizontalLayout_2.addWidget(self.exportButton)
+
+
+        self.verticalLayout_3.addWidget(self.outputButtonContainer, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.verticalLayout.addWidget(self.outputContainer)
@@ -147,7 +171,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1201, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1159, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)

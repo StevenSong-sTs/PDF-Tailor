@@ -43,6 +43,10 @@ class Ui_PDFArea(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.filenameLabel = QLabel(self.widget)
         self.filenameLabel.setObjectName(u"filenameLabel")
+        font = QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        self.filenameLabel.setFont(font)
 
         self.horizontalLayout.addWidget(self.filenameLabel)
 
@@ -52,16 +56,34 @@ class Ui_PDFArea(object):
 
         self.closeButton = QPushButton(self.widget)
         self.closeButton.setObjectName(u"closeButton")
+        self.closeButton.setFont(font)
+        self.closeButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
         self.horizontalLayout.addWidget(self.closeButton)
 
         self.selectButton = QPushButton(self.widget)
         self.selectButton.setObjectName(u"selectButton")
+        self.selectButton.setFont(font)
+        self.selectButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
         self.horizontalLayout.addWidget(self.selectButton)
 
         self.addButton = QPushButton(self.widget)
         self.addButton.setObjectName(u"addButton")
+        self.addButton.setFont(font)
+        self.addButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
 
         self.horizontalLayout.addWidget(self.addButton)
 

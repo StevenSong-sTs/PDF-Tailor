@@ -28,7 +28,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.outputScrollArea.setFixedHeight(240)
 
         pixmap = QPixmap("assets/text_logo_transparent.png")
-        scaled_pixmap = pixmap.scaled(100, 80, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+        scaled_pixmap = pixmap.scaled(140, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         self.titleLabel.setPixmap(scaled_pixmap)
         
         self.addFileButton.clicked.connect(self.add_file)

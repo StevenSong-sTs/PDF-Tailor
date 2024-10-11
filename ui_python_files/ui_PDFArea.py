@@ -18,12 +18,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QPushButton,
     QScrollArea, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
+import resource_rc
 
 class Ui_PDFArea(object):
     def setupUi(self, PDFArea):
         if not PDFArea.objectName():
             PDFArea.setObjectName(u"PDFArea")
-        PDFArea.resize(971, 266)
+        PDFArea.resize(977, 328)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -56,36 +57,16 @@ class Ui_PDFArea(object):
 
         self.closeButton = QPushButton(self.widget)
         self.closeButton.setObjectName(u"closeButton")
-        self.closeButton.setFont(font)
-        self.closeButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
+        font1 = QFont()
+        font1.setPointSize(10)
+        font1.setBold(False)
+        font1.setKerning(False)
+        self.closeButton.setFont(font1)
+        self.closeButton.setStyleSheet(u"")
+        icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.WindowClose))
+        self.closeButton.setIcon(icon)
 
         self.horizontalLayout.addWidget(self.closeButton)
-
-        self.selectButton = QPushButton(self.widget)
-        self.selectButton.setObjectName(u"selectButton")
-        self.selectButton.setFont(font)
-        self.selectButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.selectButton)
-
-        self.addButton = QPushButton(self.widget)
-        self.addButton.setObjectName(u"addButton")
-        self.addButton.setFont(font)
-        self.addButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
-
-        self.horizontalLayout.addWidget(self.addButton)
 
 
         self.verticalLayout.addWidget(self.widget)
@@ -101,10 +82,42 @@ class Ui_PDFArea(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 951, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 957, 198))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout.addWidget(self.scrollArea)
+
+        self.widget_2 = QWidget(PDFArea)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout_2 = QHBoxLayout(self.widget_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.selectButton = QPushButton(self.widget_2)
+        self.selectButton.setObjectName(u"selectButton")
+        self.selectButton.setFont(font)
+        self.selectButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
+
+        self.horizontalLayout_2.addWidget(self.selectButton)
+
+        self.addButton = QPushButton(self.widget_2)
+        self.addButton.setObjectName(u"addButton")
+        self.addButton.setFont(font)
+        self.addButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.addButton.setIcon(icon1)
+
+        self.horizontalLayout_2.addWidget(self.addButton)
+
+
+        self.verticalLayout.addWidget(self.widget_2, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.retranslateUi(PDFArea)
@@ -115,7 +128,7 @@ class Ui_PDFArea(object):
     def retranslateUi(self, PDFArea):
         PDFArea.setWindowTitle(QCoreApplication.translate("PDFArea", u"Form", None))
         self.filenameLabel.setText(QCoreApplication.translate("PDFArea", u"TextLabel", None))
-        self.closeButton.setText(QCoreApplication.translate("PDFArea", u"Close File", None))
+        self.closeButton.setText("")
         self.selectButton.setText(QCoreApplication.translate("PDFArea", u"Select All", None))
         self.addButton.setText(QCoreApplication.translate("PDFArea", u"Add", None))
     # retranslateUi

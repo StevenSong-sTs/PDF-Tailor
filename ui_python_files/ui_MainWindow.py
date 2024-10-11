@@ -18,14 +18,13 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QMenu, QMenuBar, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QStatusBar, QVBoxLayout,
-    QWidget)
+    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1159, 857)
+        MainWindow.resize(1228, 1000)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -63,7 +62,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1121, 341))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1190, 452))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
@@ -90,6 +89,9 @@ class Ui_MainWindow(object):
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
 "}")
+        icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.FolderNew))
+        self.addFileButton.setIcon(icon)
+        self.addFileButton.setIconSize(QSize(20, 20))
 
         self.horizontalLayout.addWidget(self.addFileButton)
 
@@ -99,11 +101,31 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.inputContainer)
 
-        self.outputLabel = QLabel(self.centralwidget)
+        self.widget = QWidget(self.centralwidget)
+        self.widget.setObjectName(u"widget")
+        self.horizontalLayout_3 = QHBoxLayout(self.widget)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.outputLabel = QLabel(self.widget)
         self.outputLabel.setObjectName(u"outputLabel")
         self.outputLabel.setFont(font1)
 
-        self.verticalLayout.addWidget(self.outputLabel)
+        self.horizontalLayout_3.addWidget(self.outputLabel)
+
+        self.removeSelectedPagesButton = QPushButton(self.widget)
+        self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
+        sizePolicy.setHeightForWidth(self.removeSelectedPagesButton.sizePolicy().hasHeightForWidth())
+        self.removeSelectedPagesButton.setSizePolicy(sizePolicy)
+        self.removeSelectedPagesButton.setFont(font2)
+        self.removeSelectedPagesButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}")
+
+        self.horizontalLayout_3.addWidget(self.removeSelectedPagesButton)
+
+
+        self.verticalLayout.addWidget(self.widget)
 
         self.outputContainer = QWidget(self.centralwidget)
         self.outputContainer.setObjectName(u"outputContainer")
@@ -123,7 +145,7 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1121, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1190, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
@@ -132,23 +154,6 @@ class Ui_MainWindow(object):
         self.outputButtonContainer.setObjectName(u"outputButtonContainer")
         self.horizontalLayout_2 = QHBoxLayout(self.outputButtonContainer)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.removeSelectedPagesButton = QPushButton(self.outputButtonContainer)
-        self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
-        sizePolicy.setHeightForWidth(self.removeSelectedPagesButton.sizePolicy().hasHeightForWidth())
-        self.removeSelectedPagesButton.setSizePolicy(sizePolicy)
-        self.removeSelectedPagesButton.setFont(font2)
-        self.removeSelectedPagesButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
-
-        self.horizontalLayout_2.addWidget(self.removeSelectedPagesButton)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
-
         self.exportButton = QPushButton(self.outputButtonContainer)
         self.exportButton.setObjectName(u"exportButton")
         sizePolicy.setHeightForWidth(self.exportButton.sizePolicy().hasHeightForWidth())
@@ -159,6 +164,9 @@ class Ui_MainWindow(object):
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
 "}")
+        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.MailForward))
+        self.exportButton.setIcon(icon1)
+        self.exportButton.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_2.addWidget(self.exportButton)
 
@@ -171,7 +179,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1159, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1228, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)

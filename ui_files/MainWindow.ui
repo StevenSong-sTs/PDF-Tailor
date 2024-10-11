@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1159</width>
-    <height>857</height>
+    <width>1228</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,8 +56,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1121</width>
-            <height>341</height>
+            <width>1190</width>
+            <height>452</height>
            </rect>
           </property>
          </widget>
@@ -99,6 +99,15 @@
             <property name="text">
              <string>Add File</string>
             </property>
+            <property name="icon">
+             <iconset theme="QIcon::ThemeIcon::FolderNew"/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
            </widget>
           </item>
          </layout>
@@ -108,16 +117,48 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="outputLabel">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Output:</string>
-      </property>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="outputLabel">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Output:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="removeSelectedPagesButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    border: 2px solid rgb(18, 18, 18);
+    border-radius: 15px;
+    padding: 5px;
+}</string>
+         </property>
+         <property name="text">
+          <string>Remove Selected Pages</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
@@ -157,7 +198,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1121</width>
+            <width>1190</width>
             <height>198</height>
            </rect>
           </property>
@@ -167,45 +208,6 @@
        <item alignment="Qt::AlignmentFlag::AlignHCenter">
         <widget class="QWidget" name="outputButtonContainer" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QPushButton" name="removeSelectedPagesButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton {
-    border: 2px solid rgb(18, 18, 18);
-    border-radius: 15px;
-    padding: 5px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Remove Selected Pages</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item>
            <widget class="QPushButton" name="exportButton">
             <property name="sizePolicy">
@@ -230,6 +232,15 @@
             <property name="text">
              <string>Export</string>
             </property>
+            <property name="icon">
+             <iconset theme="QIcon::ThemeIcon::MailForward"/>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
            </widget>
           </item>
          </layout>
@@ -245,7 +256,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1159</width>
+     <width>1228</width>
      <height>33</height>
     </rect>
    </property>

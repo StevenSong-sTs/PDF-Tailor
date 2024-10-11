@@ -29,7 +29,7 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Design a Text Logo
 - [x] Add logo to the title
 - [x] Redesign the HiFi wire frame to include all the planed aesthetics improvements 
-- [ ] Adjust button position for PDFArea
+- [x] Adjust button position for PDFArea
 - [ ] Adjust font family, font size for the whole application
 - [ ] Add icons for buttons
 - [ ] Add hover effect for the PDFPages

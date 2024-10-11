@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>971</width>
-    <height>266</height>
+    <width>977</width>
+    <height>328</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -63,21 +63,56 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <bold>false</bold>
+          <kerning>false</kerning>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: 2px solid rgb(18, 18, 18);
-    border-radius: 15px;
-    padding: 5px;
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
-         <string>Close File</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::WindowClose"/>
         </property>
        </widget>
       </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>957</width>
+        <height>198</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item alignment="Qt::AlignmentFlag::AlignRight">
+    <widget class="QWidget" name="widget_2" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="selectButton">
         <property name="font">
@@ -116,42 +151,19 @@
         <property name="text">
          <string>Add</string>
         </property>
+        <property name="icon">
+         <iconset resource="../assets/resource.qrc">
+          <normaloff>:/add.png</normaloff>:/add.png</iconset>
+        </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>951</width>
-        <height>198</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-   </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../assets/resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

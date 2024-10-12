@@ -64,7 +64,7 @@ class Ui_PDFArea(object):
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
+"	background-color: rgb(214, 214, 214);\n"
 "}")
 
         self.horizontalLayout.addWidget(self.selectButton)
@@ -78,11 +78,12 @@ class Ui_PDFArea(object):
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
+"	background-color: rgb(214, 214, 214);\n"
 "}")
         icon = QIcon()
         icon.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.addButton.setIcon(icon)
+        self.addButton.setIconSize(QSize(20, 20))
 
         self.horizontalLayout.addWidget(self.addButton)
 
@@ -97,11 +98,16 @@ class Ui_PDFArea(object):
         font1.setBold(False)
         font1.setKerning(False)
         self.closeButton.setFont(font1)
-        self.closeButton.setStyleSheet(u"QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
-"}")
-        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.WindowClose))
-        self.closeButton.setIcon(icon1)
+        self.closeButton.setStyleSheet(u"QPushButton {\n"
+"    border: 0px solid rgb(18, 18, 18);\n"
+"	padding: 2px;\n"
+"    icon: url(:/close_black.png); \n"
+"	icon-size: 22px 22px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    icon: url(:/close_red.png); \n"
+"}\n"
+"")
 
         self.horizontalLayout.addWidget(self.closeButton)
 

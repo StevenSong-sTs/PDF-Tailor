@@ -28,6 +28,8 @@ class PDFArea(QWidget, Ui_PDFArea):
         self.closeButton.clicked.connect(self.remove_pdf_area)
         self.selectButton.clicked.connect(self.toggle_select)
 
+        self.update_add_button_state()
+    
     def load(self):
         for page_num in range(len(self.pdf_document)):
             page = self.pdf_document.load_page(page_num)
@@ -45,6 +47,7 @@ class PDFArea(QWidget, Ui_PDFArea):
                 page_label.pdf_document = self.pdf_document
                 self.page_labels.append(page_label)
                 self.horizontalScrollContent.addWidget(page_label)
+                page_label.selection_changed.connect(self.update_add_button_state)
             else:
                 print(f"Failed to convert pixmap to QImage for page {page_num}")
     
@@ -92,3 +95,11 @@ class PDFArea(QWidget, Ui_PDFArea):
             for label in self.page_labels:
                 label.select()
             self.selectButton.setText("Unselect All")
+        
+        self.update_add_button_state()
+
+    def update_add_button_state(self):
+        if len(self.get_selected_labels()) == 0:
+            self.addButton.setDisabled(True)
+        else:
+            self.addButton.setDisabled(False)

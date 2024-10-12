@@ -63,7 +63,7 @@
             <x>0</x>
             <y>0</y>
             <width>1127</width>
-            <height>382</height>
+            <height>380</height>
            </rect>
           </property>
          </widget>
@@ -93,7 +93,7 @@
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -107,7 +107,7 @@
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(161, 161, 161);
+	background-color: rgb(214, 214, 214);
 }</string>
             </property>
             <property name="text">
@@ -167,7 +167,7 @@ QPushButton:hover {
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(161, 161, 161);
+	background-color: rgb(214, 214, 214);
 }</string>
          </property>
          <property name="text">
@@ -235,7 +235,7 @@ QPushButton:hover {
             </property>
             <property name="font">
              <font>
-              <pointsize>10</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
             </property>
@@ -246,7 +246,7 @@ QPushButton:hover {
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(161, 161, 161);
+	background-color: rgb(214, 214, 214);
 }</string>
             </property>
             <property name="text">
@@ -307,6 +307,8 @@ QPushButton:hover {
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../assets/resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

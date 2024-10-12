@@ -19,6 +19,7 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QMenu, QMenuBar, QPushButton, QScrollArea,
     QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
+import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -63,7 +64,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1127, 382))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1127, 380))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
@@ -83,10 +84,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.addFileButton.sizePolicy().hasHeightForWidth())
         self.addFileButton.setSizePolicy(sizePolicy)
         self.addFileButton.setBaseSize(QSize(0, 0))
-        font2 = QFont()
-        font2.setPointSize(10)
-        font2.setBold(True)
-        self.addFileButton.setFont(font2)
+        self.addFileButton.setFont(font1)
         self.addFileButton.setAutoFillBackground(False)
         self.addFileButton.setStyleSheet(u"QPushButton {\n"
 "    border: 2px solid rgb(18, 18, 18);\n"
@@ -94,7 +92,7 @@ class Ui_MainWindow(object):
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
+"	background-color: rgb(214, 214, 214);\n"
 "}")
         icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.FolderNew))
         self.addFileButton.setIcon(icon)
@@ -122,6 +120,9 @@ class Ui_MainWindow(object):
         self.removeSelectedPagesButton.setObjectName(u"removeSelectedPagesButton")
         sizePolicy.setHeightForWidth(self.removeSelectedPagesButton.sizePolicy().hasHeightForWidth())
         self.removeSelectedPagesButton.setSizePolicy(sizePolicy)
+        font2 = QFont()
+        font2.setPointSize(10)
+        font2.setBold(True)
         self.removeSelectedPagesButton.setFont(font2)
         self.removeSelectedPagesButton.setStyleSheet(u"QPushButton {\n"
 "    border: 2px solid rgb(18, 18, 18);\n"
@@ -129,7 +130,7 @@ class Ui_MainWindow(object):
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
+"	background-color: rgb(214, 214, 214);\n"
 "}")
 
         self.horizontalLayout_3.addWidget(self.removeSelectedPagesButton)
@@ -168,14 +169,14 @@ class Ui_MainWindow(object):
         self.exportButton.setObjectName(u"exportButton")
         sizePolicy.setHeightForWidth(self.exportButton.sizePolicy().hasHeightForWidth())
         self.exportButton.setSizePolicy(sizePolicy)
-        self.exportButton.setFont(font2)
+        self.exportButton.setFont(font1)
         self.exportButton.setStyleSheet(u"QPushButton {\n"
 "    border: 2px solid rgb(18, 18, 18);\n"
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(161, 161, 161);\n"
+"	background-color: rgb(214, 214, 214);\n"
 "}")
         icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.MailForward))
         self.exportButton.setIcon(icon1)

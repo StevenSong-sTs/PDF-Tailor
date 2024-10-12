@@ -73,7 +73,7 @@
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(161, 161, 161);
+	background-color: rgb(214, 214, 214);
 }</string>
         </property>
         <property name="text">
@@ -96,7 +96,7 @@ QPushButton:hover {
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(161, 161, 161);
+	background-color: rgb(214, 214, 214);
 }</string>
         </property>
         <property name="text">
@@ -105,6 +105,12 @@ QPushButton:hover {
         <property name="icon">
          <iconset resource="../assets/resource.qrc">
           <normaloff>:/add.png</normaloff>:/add.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
         </property>
        </widget>
       </item>
@@ -134,15 +140,19 @@ QPushButton:hover {
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton:hover {
-	background-color: rgb(161, 161, 161);
-}</string>
+         <string notr="true">QPushButton {
+    border: 0px solid rgb(18, 18, 18);
+	padding: 2px;
+    icon: url(:/close_black.png); 
+	icon-size: 22px 22px;
+}
+QPushButton:hover {
+    icon: url(:/close_red.png); 
+}
+</string>
         </property>
         <property name="text">
          <string/>
-        </property>
-        <property name="icon">
-         <iconset theme="QIcon::ThemeIcon::WindowClose"/>
         </property>
        </widget>
       </item>

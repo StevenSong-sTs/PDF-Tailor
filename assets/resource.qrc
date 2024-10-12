@@ -1,5 +1,7 @@
 <RCC>
   <qresource>
     <file>add.png</file>
+    <file>close_black.png</file>
+    <file>close_red.png</file>
   </qresource>
 </RCC>

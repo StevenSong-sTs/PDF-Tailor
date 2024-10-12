@@ -24,7 +24,7 @@ class Ui_PDFArea(object):
     def setupUi(self, PDFArea):
         if not PDFArea.objectName():
             PDFArea.setObjectName(u"PDFArea")
-        PDFArea.resize(977, 328)
+        PDFArea.resize(1483, 178)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -55,6 +55,41 @@ class Ui_PDFArea(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
+        self.selectButton = QPushButton(self.widget)
+        self.selectButton.setObjectName(u"selectButton")
+        self.selectButton.setFont(font)
+        self.selectButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
+"}")
+
+        self.horizontalLayout.addWidget(self.selectButton)
+
+        self.addButton = QPushButton(self.widget)
+        self.addButton.setObjectName(u"addButton")
+        self.addButton.setFont(font)
+        self.addButton.setStyleSheet(u"QPushButton {\n"
+"    border: 2px solid rgb(18, 18, 18);\n"
+"    border-radius: 15px;\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.addButton.setIcon(icon)
+
+        self.horizontalLayout.addWidget(self.addButton)
+
+        self.horizontalSpacer_2 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
         self.closeButton = QPushButton(self.widget)
         self.closeButton.setObjectName(u"closeButton")
         font1 = QFont()
@@ -62,9 +97,11 @@ class Ui_PDFArea(object):
         font1.setBold(False)
         font1.setKerning(False)
         self.closeButton.setFont(font1)
-        self.closeButton.setStyleSheet(u"")
-        icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.WindowClose))
-        self.closeButton.setIcon(icon)
+        self.closeButton.setStyleSheet(u"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
+"}")
+        icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.WindowClose))
+        self.closeButton.setIcon(icon1)
 
         self.horizontalLayout.addWidget(self.closeButton)
 
@@ -78,11 +115,12 @@ class Ui_PDFArea(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
         self.scrollArea.setSizePolicy(sizePolicy2)
-        self.scrollArea.setMinimumSize(QSize(0, 200))
+        self.scrollArea.setMinimumSize(QSize(0, 0))
+        self.scrollArea.setLocale(QLocale(QLocale.Chinese, QLocale.China))
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 957, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1463, 54))
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout.addWidget(self.scrollArea)
@@ -91,31 +129,6 @@ class Ui_PDFArea(object):
         self.widget_2.setObjectName(u"widget_2")
         self.horizontalLayout_2 = QHBoxLayout(self.widget_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.selectButton = QPushButton(self.widget_2)
-        self.selectButton.setObjectName(u"selectButton")
-        self.selectButton.setFont(font)
-        self.selectButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
-
-        self.horizontalLayout_2.addWidget(self.selectButton)
-
-        self.addButton = QPushButton(self.widget_2)
-        self.addButton.setObjectName(u"addButton")
-        self.addButton.setFont(font)
-        self.addButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}")
-        icon1 = QIcon()
-        icon1.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.addButton.setIcon(icon1)
-
-        self.horizontalLayout_2.addWidget(self.addButton)
-
 
         self.verticalLayout.addWidget(self.widget_2, 0, Qt.AlignmentFlag.AlignRight)
 
@@ -128,8 +141,8 @@ class Ui_PDFArea(object):
     def retranslateUi(self, PDFArea):
         PDFArea.setWindowTitle(QCoreApplication.translate("PDFArea", u"Form", None))
         self.filenameLabel.setText(QCoreApplication.translate("PDFArea", u"TextLabel", None))
-        self.closeButton.setText("")
         self.selectButton.setText(QCoreApplication.translate("PDFArea", u"Select All", None))
         self.addButton.setText(QCoreApplication.translate("PDFArea", u"Add", None))
+        self.closeButton.setText("")
     # retranslateUi
 

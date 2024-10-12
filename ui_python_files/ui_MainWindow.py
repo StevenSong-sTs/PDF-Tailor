@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1228, 1000)
+        MainWindow.resize(1165, 930)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -55,6 +55,7 @@ class Ui_MainWindow(object):
 
         self.inputContainer = QWidget(self.centralwidget)
         self.inputContainer.setObjectName(u"inputContainer")
+        self.inputContainer.setMinimumSize(QSize(0, 460))
         self.verticalLayout_2 = QVBoxLayout(self.inputContainer)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.inputScrollArea = QScrollArea(self.inputContainer)
@@ -62,13 +63,16 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1190, 452))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1127, 382))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
 
         self.addFileButtonContainer = QWidget(self.inputContainer)
         self.addFileButtonContainer.setObjectName(u"addFileButtonContainer")
+        self.addFileButtonContainer.setStyleSheet(u"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
+"}")
         self.horizontalLayout = QHBoxLayout(self.addFileButtonContainer)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.addFileButton = QPushButton(self.addFileButtonContainer)
@@ -88,6 +92,9 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(18, 18, 18);\n"
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
 "}")
         icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.FolderNew))
         self.addFileButton.setIcon(icon)
@@ -120,6 +127,9 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(18, 18, 18);\n"
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
 "}")
 
         self.horizontalLayout_3.addWidget(self.removeSelectedPagesButton)
@@ -145,7 +155,7 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1190, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1127, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
@@ -163,6 +173,9 @@ class Ui_MainWindow(object):
 "    border: 2px solid rgb(18, 18, 18);\n"
 "    border-radius: 15px;\n"
 "    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(161, 161, 161);\n"
 "}")
         icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.MailForward))
         self.exportButton.setIcon(icon1)
@@ -179,7 +192,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1228, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1165, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)

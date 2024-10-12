@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1228</width>
-    <height>1000</height>
+    <width>1165</width>
+    <height>930</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,6 +45,12 @@
     </item>
     <item>
      <widget class="QWidget" name="inputContainer" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>460</height>
+       </size>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QScrollArea" name="inputScrollArea">
@@ -56,8 +62,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1190</width>
-            <height>452</height>
+            <width>1127</width>
+            <height>382</height>
            </rect>
           </property>
          </widget>
@@ -65,6 +71,11 @@
        </item>
        <item>
         <widget class="QWidget" name="addFileButtonContainer" native="true">
+         <property name="styleSheet">
+          <string notr="true">QPushButton:hover {
+	background-color: rgb(161, 161, 161);
+}</string>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPushButton" name="addFileButton">
@@ -94,6 +105,9 @@
     border: 2px solid rgb(18, 18, 18);
     border-radius: 15px;
     padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(161, 161, 161);
 }</string>
             </property>
             <property name="text">
@@ -151,6 +165,9 @@
     border: 2px solid rgb(18, 18, 18);
     border-radius: 15px;
     padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(161, 161, 161);
 }</string>
          </property>
          <property name="text">
@@ -198,7 +215,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1190</width>
+            <width>1127</width>
             <height>198</height>
            </rect>
           </property>
@@ -227,6 +244,9 @@
     border: 2px solid rgb(18, 18, 18);
     border-radius: 15px;
     padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(161, 161, 161);
 }</string>
             </property>
             <property name="text">
@@ -256,7 +276,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1228</width>
+     <width>1165</width>
      <height>33</height>
     </rect>
    </property>

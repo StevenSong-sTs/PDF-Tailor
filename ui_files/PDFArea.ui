@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>977</width>
-    <height>328</height>
+    <width>1483</width>
+    <height>178</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -59,6 +59,72 @@
        </spacer>
       </item>
       <item>
+       <widget class="QPushButton" name="selectButton">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 2px solid rgb(18, 18, 18);
+    border-radius: 15px;
+    padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(161, 161, 161);
+}</string>
+        </property>
+        <property name="text">
+         <string>Select All</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 2px solid rgb(18, 18, 18);
+    border-radius: 15px;
+    padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(161, 161, 161);
+}</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../assets/resource.qrc">
+          <normaloff>:/add.png</normaloff>:/add.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QPushButton" name="closeButton">
         <property name="font">
          <font>
@@ -68,7 +134,9 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">QPushButton:hover {
+	background-color: rgb(161, 161, 161);
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -92,8 +160,11 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>200</height>
+       <height>0</height>
       </size>
+     </property>
+     <property name="locale">
+      <locale language="Chinese" country="China"/>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -103,8 +174,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>957</width>
-        <height>198</height>
+        <width>1463</width>
+        <height>54</height>
        </rect>
       </property>
      </widget>
@@ -112,52 +183,7 @@
    </item>
    <item alignment="Qt::AlignmentFlag::AlignRight">
     <widget class="QWidget" name="widget_2" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QPushButton" name="selectButton">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: 2px solid rgb(18, 18, 18);
-    border-radius: 15px;
-    padding: 5px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Select All</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="addButton">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: 2px solid rgb(18, 18, 18);
-    border-radius: 15px;
-    padding: 5px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Add</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../assets/resource.qrc">
-          <normaloff>:/add.png</normaloff>:/add.png</iconset>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <layout class="QHBoxLayout" name="horizontalLayout_2"/>
     </widget>
    </item>
   </layout>

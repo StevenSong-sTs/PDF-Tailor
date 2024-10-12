@@ -21,7 +21,6 @@ class PDFArea(QWidget, Ui_PDFArea):
         self.horizontalScrollContent.setAlignment(Qt.AlignLeft)
         self.scrollArea.setWidget(self.horizontalScrollWidget)
         self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setFixedHeight(240)
 
         self.filenameLabel.setText(file_name) 
 

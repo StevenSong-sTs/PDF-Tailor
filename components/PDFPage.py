@@ -9,7 +9,7 @@ class PDFPage(QLabel):
         super().__init__(parent)
         self.setFrameStyle(QFrame.StyledPanel | QFrame.Plain)
         self.setLineWidth(2)
-        self.setFixedSize(150,200)
+        self.setFixedSize(120,160)
         self.selected = False
         self.unselect()
         

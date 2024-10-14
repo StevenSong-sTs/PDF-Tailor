@@ -79,6 +79,11 @@ class Ui_PDFArea(object):
 "}\n"
 "QPushButton:hover {\n"
 "	background-color: rgb(214, 214, 214);\n"
+"}\n"
+"QPushButton:disabled {\n"
+"	background-color: rgb(169, 169, 169); \n"
+"	color: rgb(200, 200, 200); \n"
+"	border: 2px solid rgb(120, 120, 120);\n"
 "}")
         icon = QIcon()
         icon.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)

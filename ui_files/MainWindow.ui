@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1165</width>
-    <height>930</height>
+    <width>1171</width>
+    <height>945</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,8 +62,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1127</width>
-            <height>380</height>
+            <width>1133</width>
+            <height>393</height>
            </rect>
           </property>
          </widget>
@@ -96,6 +96,9 @@
               <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="toolTip">
+             <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import a PDF file to the Input section&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="autoFillBackground">
              <bool>false</bool>
@@ -160,6 +163,9 @@ QPushButton:hover {
            <bold>true</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected pages from the output section&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
     border: 2px solid rgb(18, 18, 18);
@@ -215,7 +221,7 @@ QPushButton:hover {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1127</width>
+            <width>1133</width>
             <height>198</height>
            </rect>
           </property>
@@ -238,6 +244,9 @@ QPushButton:hover {
               <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export the PDF pages in the output section to a new PDF file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton {
@@ -276,7 +285,7 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1165</width>
+     <width>1171</width>
      <height>33</height>
     </rect>
    </property>

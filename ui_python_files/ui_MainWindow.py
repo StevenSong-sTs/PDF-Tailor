@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1165, 930)
+        MainWindow.resize(1171, 945)
         self.actionAdd = QAction(MainWindow)
         self.actionAdd.setObjectName(u"actionAdd")
         self.actionClear = QAction(MainWindow)
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1127, 380))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1133, 393))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
@@ -85,6 +85,9 @@ class Ui_MainWindow(object):
         self.addFileButton.setSizePolicy(sizePolicy)
         self.addFileButton.setBaseSize(QSize(0, 0))
         self.addFileButton.setFont(font1)
+#if QT_CONFIG(tooltip)
+        self.addFileButton.setToolTip(u"<html><head/><body><p>Import a PDF file to the Input section</p></body></html>")
+#endif // QT_CONFIG(tooltip)
         self.addFileButton.setAutoFillBackground(False)
         self.addFileButton.setStyleSheet(u"QPushButton {\n"
 "    border: 2px solid rgb(18, 18, 18);\n"
@@ -156,7 +159,7 @@ class Ui_MainWindow(object):
         self.outputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1127, 198))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1133, 198))
         self.outputScrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.verticalLayout_3.addWidget(self.outputScrollArea)
@@ -193,7 +196,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1165, 33))
+        self.menubar.setGeometry(QRect(0, 0, 1171, 33))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)
@@ -220,7 +223,13 @@ class Ui_MainWindow(object):
         self.inputLabel.setText(QCoreApplication.translate("MainWindow", u"Input:", None))
         self.addFileButton.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
         self.outputLabel.setText(QCoreApplication.translate("MainWindow", u"Output:", None))
+#if QT_CONFIG(tooltip)
+        self.removeSelectedPagesButton.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Remove selected pages from the output section</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.removeSelectedPagesButton.setText(QCoreApplication.translate("MainWindow", u"Remove Selected Pages", None))
+#if QT_CONFIG(tooltip)
+        self.exportButton.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Export the PDF pages in the output section to a new PDF file</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.exportButton.setText(QCoreApplication.translate("MainWindow", u"Export", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi

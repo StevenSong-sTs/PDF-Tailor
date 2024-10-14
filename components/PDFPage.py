@@ -18,8 +18,8 @@ class PDFPage(QLabel):
         # Store the base stylesheet to easily modify later
         self.base_stylesheet = (
             "QLabel {"
-            "    border: 3px solid rgb(18, 18, 18);"
-            "    border-radius: 10px;"
+            "    border: 2px solid rgb(18, 18, 18);"
+            "    border-radius: 5px;"
             "    padding: 2px;"
             "}"
             "QLabel:hover {"
@@ -28,6 +28,8 @@ class PDFPage(QLabel):
         )
         self.setStyleSheet(self.base_stylesheet)
         self.unselect()
+
+        self.setToolTip("Click to select or unselect this PDF page.")
 
     def mousePressEvent(self, event):
         if self.selected:

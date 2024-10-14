@@ -66,6 +66,9 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select/Unselect all pages from this PDF file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: 2px solid rgb(18, 18, 18);
@@ -88,6 +91,9 @@ QPushButton:hover {
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add selected pages to output section&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
@@ -143,6 +149,9 @@ QPushButton:disabled {
           <bold>false</bold>
           <kerning>false</kerning>
          </font>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close this PDF file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {

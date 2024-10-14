@@ -152,8 +152,17 @@ class Ui_PDFArea(object):
     def retranslateUi(self, PDFArea):
         PDFArea.setWindowTitle(QCoreApplication.translate("PDFArea", u"Form", None))
         self.filenameLabel.setText(QCoreApplication.translate("PDFArea", u"TextLabel", None))
+#if QT_CONFIG(tooltip)
+        self.selectButton.setToolTip(QCoreApplication.translate("PDFArea", u"<html><head/><body><p>Select/Unselect all pages from this PDF file</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.selectButton.setText(QCoreApplication.translate("PDFArea", u"Select All", None))
+#if QT_CONFIG(tooltip)
+        self.addButton.setToolTip(QCoreApplication.translate("PDFArea", u"<html><head/><body><p>Add selected pages to output section</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.addButton.setText(QCoreApplication.translate("PDFArea", u"Add", None))
+#if QT_CONFIG(tooltip)
+        self.closeButton.setToolTip(QCoreApplication.translate("PDFArea", u"<html><head/><body><p>Close this PDF file</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
         self.closeButton.setText("")
     # retranslateUi
 

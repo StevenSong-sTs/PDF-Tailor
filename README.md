@@ -32,7 +32,8 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Adjust button position for PDFArea
 - [x] Adjust font family, font size for the whole application
 - [x] Add icons for buttons
-- [ ] Add hover effect for the PDFPages
+- [ ] Add tooltips to buttons
+- [x] Add hover effect for the PDFPages
 - [x] Add hover effect for buttons
 - [x] Adjust the default application size
 - [ ] Adjust the logo color based on the selected system theme

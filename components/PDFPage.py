@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
+    QApplication, QLabel, QFrame
 )
 from PySide6.QtCore import Signal
 from PySide6.QtGui import QPalette
@@ -10,14 +10,25 @@ class PDFPage(QLabel):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setFrameStyle(QFrame.StyledPanel | QFrame.Plain)
-        self.setLineWidth(2)
-        self.setFixedSize(120,160)
+        self.setFixedSize(120, 160)
         self.selected = False
-        self.unselect()
-        
         self.page_num = None  
-        self.pdf_document = None  
-    
+        self.pdf_document = None
+
+        # Store the base stylesheet to easily modify later
+        self.base_stylesheet = (
+            "QLabel {"
+            "    border: 3px solid rgb(18, 18, 18);"
+            "    border-radius: 10px;"
+            "    padding: 2px;"
+            "}"
+            "QLabel:hover {"
+            "    background-color: rgb(214, 214, 214);"
+            "}"
+        )
+        self.setStyleSheet(self.base_stylesheet)
+        self.unselect()
+
     def mousePressEvent(self, event):
         if self.selected:
             self.unselect()
@@ -29,12 +40,15 @@ class PDFPage(QLabel):
     def select(self):
         self.selected = True
         border_color = self.get_system_theme_color(selected=True)
-        self.setStyleSheet(f"border: 2px solid {border_color}; padding: 2px;")
+        self.update_border_color(border_color)
 
     def unselect(self):
         self.selected = False
         border_color = self.get_system_theme_color(selected=False)
-        self.setStyleSheet(f"border: 2px solid {border_color}; padding: 2px;")
+        self.update_border_color(border_color)
+
+    def update_border_color(self, color):
+        self.setStyleSheet(f"{self.base_stylesheet} QLabel {{ border-color: {color}; }}")
 
     def get_system_theme_color(self, selected):
         palette = QApplication.palette()

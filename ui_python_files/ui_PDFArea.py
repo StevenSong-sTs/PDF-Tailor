@@ -58,33 +58,14 @@ class Ui_PDFArea(object):
         self.selectButton = QPushButton(self.widget)
         self.selectButton.setObjectName(u"selectButton")
         self.selectButton.setFont(font)
-        self.selectButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(214, 214, 214);\n"
-"}")
+        self.selectButton.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.selectButton)
 
         self.addButton = QPushButton(self.widget)
         self.addButton.setObjectName(u"addButton")
         self.addButton.setFont(font)
-        self.addButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(214, 214, 214);\n"
-"}\n"
-"QPushButton:disabled {\n"
-"	background-color: rgb(169, 169, 169); \n"
-"	color: rgb(200, 200, 200); \n"
-"	border: 2px solid rgb(120, 120, 120);\n"
-"}")
+        self.addButton.setStyleSheet(u"")
         icon = QIcon()
         icon.addFile(u":/add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.addButton.setIcon(icon)

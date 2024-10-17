@@ -6,6 +6,7 @@ from ui_python_files.ui_PDFArea import Ui_PDFArea
 import fitz
 from components.PDFPage import PDFPage
 from PySide6.QtGui import QPixmap, QImage
+from helpers.helpers import get_system_theme_color
 
 class PDFArea(QWidget, Ui_PDFArea):
     def __init__(self, document, file_name, outputContent):
@@ -29,6 +30,7 @@ class PDFArea(QWidget, Ui_PDFArea):
         self.selectButton.clicked.connect(self.toggle_select)
 
         self.update_add_button_state()
+        self.apply_stylesheet()
     
     def load(self):
         for page_num in range(len(self.pdf_document)):
@@ -103,3 +105,25 @@ class PDFArea(QWidget, Ui_PDFArea):
             self.addButton.setDisabled(True)
         else:
             self.addButton.setDisabled(False)
+    
+    def apply_stylesheet(self):
+        theme = get_system_theme_color()
+        if theme == "light":
+            border_color = "rgb(18, 18, 18)"
+            hover_color = "rgb(214, 214, 214)"
+        else:  # dark theme
+            border_color = "rgb(200, 200, 200);"
+            hover_color = "rgb(70, 70, 70);"
+
+        button_stylesheet = f"""
+            QPushButton {{
+                border: 2px solid {border_color};
+                border-radius: 10px;
+                padding: 5px;
+            }}
+            QPushButton:hover {{
+                background-color: {hover_color};
+            }}
+        """
+        self.selectButton.setStyleSheet(button_stylesheet)
+        self.addButton.setStyleSheet(button_stylesheet)

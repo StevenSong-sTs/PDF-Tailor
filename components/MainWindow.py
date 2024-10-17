@@ -6,6 +6,7 @@ from PySide6.QtGui import QPixmap
 from ui_python_files.ui_MainWindow import Ui_MainWindow
 from components.PDFPage import PDFPage
 from components.PDFArea import PDFArea
+from helpers.helpers import get_system_theme_color
 import fitz 
 import os 
 
@@ -27,13 +28,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.outputScrollArea.setWidgetResizable(True)
         self.outputScrollArea.setFixedHeight(240)
 
-        pixmap = QPixmap("assets/text_logo_transparent.png")
+        if get_system_theme_color() == 'light':
+            pixmap = QPixmap("assets/text_logo_transparent_light.png")
+        else:
+            pixmap = QPixmap("assets/text_logo_transparent_dark.png")
+
         scaled_pixmap = pixmap.scaled(140, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         self.titleLabel.setPixmap(scaled_pixmap)
         
         self.addFileButton.clicked.connect(self.add_file)
         self.exportButton.clicked.connect(self.export_to_pdf)
         self.removeSelectedPagesButton.clicked.connect(self.remove_selected_pages)
+        self.apply_stylesheet()
     
     def add_file(self):
         file_dialog = QFileDialog(self)
@@ -92,3 +98,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.outputScrollContent.removeWidget(label)
             label.setParent(None)
             label.deleteLater()
+    
+    def apply_stylesheet(self):
+        theme = get_system_theme_color()
+        if theme == "light":
+            border_color = "rgb(18, 18, 18)"
+            hover_color = "rgb(214, 214, 214)"
+        else:  # dark theme
+            border_color = "rgb(200, 200, 200);"
+            hover_color = "rgb(70, 70, 70);"
+
+        button_stylesheet = f"""
+            QPushButton {{
+                border: 2px solid {border_color};
+                border-radius: 10px;
+                padding: 5px;
+            }}
+            QPushButton:hover {{
+                background-color: {hover_color};
+            }}
+        """
+        self.addFileButton.setStyleSheet(button_stylesheet)
+        self.removeSelectedPagesButton.setStyleSheet(button_stylesheet)
+        self.exportButton.setStyleSheet(button_stylesheet)
+

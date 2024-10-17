@@ -15,10 +15,9 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Add more clear notification when the document is exported. 
 - [x] Open the exported pdf after completion
 - [x] Adjust the border color of the PDFPage according to the system color theme
-- [ ] Drug the page in the output section to reorder
 
 ## Bug Fix
-- [x] Remove from page button does not function properly 
+- [x] Remove from page button does not function properly  
 
 ## Edge Cases to Handle:
 - [ ] The exporting pdf trying to over write the existing loaded pdf
@@ -36,7 +35,7 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Add hover effect for the PDFPages
 - [x] Add hover effect for buttons
 - [x] Adjust the default application size
-- [ ] Adjust the logo color based on the selected system theme
+- [x] Adjust the logo color based on the selected system theme
 
 ## After Completion:
 - [ ] Research how to publish the app to MS store

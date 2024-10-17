@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.inputScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1133, 393))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1133, 411))
         self.inputScrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.inputScrollArea)
@@ -89,14 +89,7 @@ class Ui_MainWindow(object):
         self.addFileButton.setToolTip(u"<html><head/><body><p>Import a PDF file to the Input section</p></body></html>")
 #endif // QT_CONFIG(tooltip)
         self.addFileButton.setAutoFillBackground(False)
-        self.addFileButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(214, 214, 214);\n"
-"}")
+        self.addFileButton.setStyleSheet(u"")
         icon = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.FolderNew))
         self.addFileButton.setIcon(icon)
         self.addFileButton.setIconSize(QSize(20, 20))
@@ -127,14 +120,7 @@ class Ui_MainWindow(object):
         font2.setPointSize(10)
         font2.setBold(True)
         self.removeSelectedPagesButton.setFont(font2)
-        self.removeSelectedPagesButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(214, 214, 214);\n"
-"}")
+        self.removeSelectedPagesButton.setStyleSheet(u"")
 
         self.horizontalLayout_3.addWidget(self.removeSelectedPagesButton)
 
@@ -173,14 +159,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.exportButton.sizePolicy().hasHeightForWidth())
         self.exportButton.setSizePolicy(sizePolicy)
         self.exportButton.setFont(font1)
-        self.exportButton.setStyleSheet(u"QPushButton {\n"
-"    border: 2px solid rgb(18, 18, 18);\n"
-"    border-radius: 15px;\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(214, 214, 214);\n"
-"}")
+        self.exportButton.setStyleSheet(u"")
         icon1 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.MailForward))
         self.exportButton.setIcon(icon1)
         self.exportButton.setIconSize(QSize(20, 20))

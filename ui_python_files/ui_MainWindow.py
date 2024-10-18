@@ -17,8 +17,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QScrollArea,
-    QSizePolicy, QStatusBar, QVBoxLayout, QWidget)
+    QMenuBar, QPushButton, QScrollArea, QSizePolicy,
+    QStatusBar, QVBoxLayout, QWidget)
 import resource_rc
 
 class Ui_MainWindow(object):
@@ -176,17 +176,10 @@ class Ui_MainWindow(object):
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 1171, 33))
-        self.menuFile = QMenu(self.menubar)
-        self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
-        self.menubar.addAction(self.menuFile.menuAction())
-        self.menuFile.addAction(self.actionAdd)
-        self.menuFile.addAction(self.actionClear)
-        self.menuFile.addAction(self.actionExport)
 
         self.retranslateUi(MainWindow)
 
@@ -210,6 +203,5 @@ class Ui_MainWindow(object):
         self.exportButton.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Export the PDF pages in the output section to a new PDF file</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.exportButton.setText(QCoreApplication.translate("MainWindow", u"Export", None))
-        self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi
 

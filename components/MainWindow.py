@@ -2,6 +2,11 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QFileDialog, QHBoxLayout, QScrollArea, QFrame
 )
+from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
+    QCursor, QFont, QFontDatabase, QGradient,
+    QIcon, QImage, QKeySequence, QLinearGradient,
+    QPainter, QPalette, QPixmap, QRadialGradient,
+    QTransform)
 from PySide6.QtGui import QPixmap
 from ui_python_files.ui_MainWindow import Ui_MainWindow
 from components.PDFPage import PDFPage
@@ -27,6 +32,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.outputScrollArea.setWidget(self.outputScrollWidget)
         self.outputScrollArea.setWidgetResizable(True)
         self.outputScrollArea.setFixedHeight(240)
+
+        self.setWindowTitle("PDF Tailor")
+        self.setWindowIcon(QIcon("assets/logo_white_transparent.png"))  
 
         if get_system_theme_color() == 'light':
             pixmap = QPixmap("assets/text_logo_transparent_light.png")

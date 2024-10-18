@@ -1,51 +1,49 @@
-# PDF-Tailor
-Your local tailor for merging or combining any pdfs. No more worry about the sketchy third party website steal you files
+# PDF Tailor
 
-## TODO:
-- [x] Fix the size of the PDFPreview 
-- [x] Fix the size the PDF Area
-- [x] Implement Output List and Test add multiple pages to the list 
-- [x] Fix adding to the output section will remove the label from Input problem
-- [x] Rename PDFPreview PdfPreview
-- [x] implement Export button in the output section
-- [x] implement Close button in the input section
-- [x] implement Select/Unselect Selection button in the input section
-- [x] Add remove button in the output section
-- [x] Improve the output logic to output everything no matter it is selected or not
-- [x] Add more clear notification when the document is exported. 
-- [x] Open the exported pdf after completion
-- [x] Adjust the border color of the PDFPage according to the system color theme
+PDF Tailor is a PySide6 application designed to make merging and splitting PDF files simple and secure. Concerned about uploading PDFs containing sensitive personal information to untrustworthy online services? Such websites may store your files, potentially leading to data breaches and compromising your privacy. PDF Tailor offers a secure alternative, allowing you to process all your PDF files locally on your own computer. This ensures that your files never leave your device, providing you with complete control and peace of mind regarding your information. With this app, you can import multiple PDF files, customize them by merging or splitting, and export the newly combined document.
 
-## Bug Fix
-- [x] Remove from page button does not function properly  
+![PDF Tailor Screenshot](screenshot.JPG)
 
-## Edge Cases to Handle:
-- [ ] The exporting pdf trying to over write the existing loaded pdf
+## Features
 
+- **Import Multiple PDF Files**: Add multiple PDF files to create a tailored version.
+- **Merge PDFs**: Combine different PDF files into a single document.
+- **Split PDFs**: Split a PDF into separate pages or select specific pages to create a new file.
+- **Export Tailored PDF**: Save your merged or split version to a new PDF file.
 
-## Aesthetics Improvements:
-- [x] Design a logo 
-- [x] Design a Text Logo
-- [x] Add logo to the title
-- [x] Redesign the HiFi wire frame to include all the planed aesthetics improvements 
-- [x] Adjust button position for PDFArea
-- [x] Adjust font family, font size for the whole application
-- [x] Add icons for buttons
-- [x] Add tooltips to buttons
-- [x] Add hover effect for the PDFPages
-- [x] Add hover effect for buttons
-- [x] Adjust the default application size
-- [x] Adjust the logo color based on the selected system theme
+## Requirements
 
-## After Completion:
-- [x] Research how to publish the app to MS store
+To run PDF Tailor, make sure you have Python installed and then install the dependencies listed in `requirements.txt`.
 
-## Project Scope
- - A Native: research into how to be cross platform as much as possible
- - Investigate build UI with Python
- - Option of using other language? C++ as I want to improve the c++ skills
+### Installation
 
-**Features:**
- - Combine multiple pdf files into one
- - Split a pdf file into multiple ones
- - Import multiple PDF files -> show the preview -> Draw and drop to build different pdf outputs? (Maybe) 
+1. Clone the repository or download the source code.
+
+   ```sh
+   git clone https://github.com/StevenSong-sTs/PDF-Tailor.git
+   cd pdf-tailor
+   ```
+
+2. Install the required packages using `pip`:
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+Run the application with Python:
+
+```sh
+python pdf_tailor.py
+```
+
+Follow the on-screen instructions to import, merge, split, and export your PDF files.
+
+## Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue to discuss improvements or new features.
+
+## Contact
+
+If you have any questions or feedback, please contact me at [stevensong0x7cc@gmail.com].

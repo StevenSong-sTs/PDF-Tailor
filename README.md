@@ -38,7 +38,7 @@ Your local tailor for merging or combining any pdfs. No more worry about the ske
 - [x] Adjust the logo color based on the selected system theme
 
 ## After Completion:
-- [ ] Research how to publish the app to MS store
+- [x] Research how to publish the app to MS store
 
 ## Project Scope
  - A Native: research into how to be cross platform as much as possible

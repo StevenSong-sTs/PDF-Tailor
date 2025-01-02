@@ -11,7 +11,7 @@ from PySide6.QtGui import QPixmap
 from ui_python_files.ui_MainWindow import Ui_MainWindow
 from components.PDFPage import PDFPage
 from components.PDFArea import PDFArea
-from helpers.helpers import get_system_theme_color
+from helpers.helpers import get_system_theme_color, resource_path
 import fitz 
 import os 
 
@@ -34,12 +34,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.outputScrollArea.setFixedHeight(240)
 
         self.setWindowTitle("PDF Tailor")
-        self.setWindowIcon(QIcon("assets/logo_white_transparent.png"))  
+        self.setWindowIcon(QIcon(resource_path("assets/logo_white_transparent.png")))
 
         if get_system_theme_color() == 'light':
-            pixmap = QPixmap("assets/text_logo_transparent_light.png")
+            pixmap = QPixmap(resource_path("assets/text_logo_transparent_light.png"))
         else:
-            pixmap = QPixmap("assets/text_logo_transparent_dark.png")
+            pixmap = QPixmap(resource_path("assets/text_logo_transparent_dark.png"))
 
         scaled_pixmap = pixmap.scaled(140, 100, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         self.titleLabel.setPixmap(scaled_pixmap)
